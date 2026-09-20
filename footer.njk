@@ -1,0 +1,33 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="/assets/img/logo-black.png" alt="{{ site.name }}">
+        <p>{{ site.tagline }}</p>
+      </div>
+      <div>
+        <h4>Istraži</h4>
+        <ul>
+          {% for item in site.nav %}
+          <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li><a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© {{ year }} {{ site.business.legalName }}</span>
+      <span>
+        <a href="/politika-privatnosti/">Politika privatnosti</a> ·
+        <a href="/kolacici/">Kolačići</a>
+      </span>
+    </div>
+  </div>
+</footer>

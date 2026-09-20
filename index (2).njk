@@ -1,0 +1,57 @@
+---
+layout: base.njk
+title: Kontakt
+description: Javi se za upoznajmo se poziv ili upit — Lanova virtualna asistencija.
+---
+<section class="page-hero section--tight">
+  <div class="wrap">
+    <p class="eyebrow">Kontakt</p>
+    <h1>Javimo se, pa krenimo od tamo gdje ti najviše treba pomoć</h1>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap contact-grid">
+    <div class="contact-card">
+      <form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="kontakt">
+        <p style="display:none">
+          <label>Ne popunjavaj ovo polje: <input name="bot-field"></label>
+        </p>
+        <div class="form-field">
+          <label for="ime">Ime i prezime</label>
+          <input type="text" id="ime" name="ime" required>
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-field">
+          <label for="tip">Zanima me</label>
+          <select id="tip" name="tip">
+            <option>Upoznajmo se poziv</option>
+            <option>Usluge</option>
+            <option>Program: Spremna za delegiranje</option>
+            <option>Nešto drugo</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="poruka">Poruka</label>
+          <textarea id="poruka" name="poruka" required></textarea>
+        </div>
+        <button class="btn btn--primary" type="submit">Pošalji upit</button>
+      </form>
+    </div>
+
+    <div>
+      <dl class="contact-info">
+        <dt>Email</dt>
+        <dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>
+        <dt>Radno vrijeme</dt>
+        <dd>{{ site.hours }}</dd>
+        <dt>Društvene mreže</dt>
+        <dd><a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a> · <a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></dd>
+      </dl>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+---
+layout: base.njk
+---
+<article class="section">
+  <div class="wrap" style="max-width: 700px;">
+    <p class="eyebrow">{{ date | readableDate }}</p>
+    <h1>{{ title }}</h1>
+    {% if image %}<img src="{{ image }}" alt="" style="border-radius: 20px; margin-bottom: 30px;">{% endif %}
+    <div class="legal">
+      {{ content | safe }}
+    </div>
+    <a class="btn btn--ghost" href="/blog/">← Svi tekstovi</a>
+  </div>
+</article>

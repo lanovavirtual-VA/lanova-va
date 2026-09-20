@@ -1,0 +1,35 @@
+---
+layout: base.njk
+title: Korisni sadržaj
+description: Savjeti o organizaciji poslovanja, delegiranju i produktivnosti — Lanova blog.
+---
+<section class="page-hero section--tight">
+  <div class="wrap">
+    <p class="eyebrow">Korisni sadržaj</p>
+    <h1>Savjeti za organizaciju poslovanja i delegiranje</h1>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    {% if collections.posts.length %}
+    <div class="post-grid">
+      {% for post in collections.posts %}
+      <a class="post-card" href="{{ post.url }}" style="text-decoration:none; color:inherit;">
+        {% if post.data.image %}<img src="{{ post.data.image }}" alt="">{% endif %}
+        <div class="post-body">
+          <span class="post-date">{{ post.date | readableDate }}</span>
+          <h3>{{ post.data.title }}</h3>
+          <p>{{ post.templateContent | excerpt(140) }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">
+      <h3>Prvi tekstovi stižu uskoro</h3>
+      <p>Novi postovi dodaju se kroz <a href="/admin/">uređivačko sučelje</a> — vrati se uskoro po prve savjete o organizaciji i delegiranju.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
