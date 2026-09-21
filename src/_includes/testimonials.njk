@@ -1,0 +1,18 @@
+<div class="carousel" data-carousel>
+  <div class="carousel-track">
+    {% for t in testimonials %}
+    <article class="testimonial">
+      {% if t.stars %}<div class="stars" aria-label="{{ t.stars }} od 5 zvjezdica">{{ "★" | multiply(t.stars) }}</div>{% endif %}
+      <p>{{ t.text }}</p>
+      <div class="testimonial-foot">
+        <span class="avatar">{{ t.initials }}</span>
+        <strong>{{ t.name }}</strong>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  <div class="carousel-controls">
+    <button class="carousel-btn" data-prev aria-label="Prethodna recenzija">←</button>
+    <button class="carousel-btn" data-next aria-label="Sljedeća recenzija">→</button>
+  </div>
+</div>

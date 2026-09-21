@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/assets/img/blog-uploads"
+public_folder: "/assets/img/blog-uploads"
+
+publish_mode: simple
+
+collections:
+  - name: "posts"
+    label: "Blog postovi"
+    folder: "src/blog/posts"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    fields:
+      - { label: "Naslov", name: "title", widget: "string" }
+      - { label: "Datum objave", name: "date", widget: "datetime" }
+      - { label: "Naslovna slika", name: "image", widget: "image", required: false }
+      - { label: "Sadržaj", name: "body", widget: "markdown" }

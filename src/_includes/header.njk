@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="{{ site.name }} — naslovna">
+      <img src="/assets/img/logo-black.png" alt="{{ site.name }}">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList" aria-label="Otvori izbornik">
+      <span></span>
+    </button>
+    <nav aria-label="Glavna navigacija">
+      <ul class="nav-list" id="navList">
+        {% for item in site.nav %}
+        <li><a href="{{ item.url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
